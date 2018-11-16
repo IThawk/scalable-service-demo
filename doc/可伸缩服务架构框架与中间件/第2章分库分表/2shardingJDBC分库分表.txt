@@ -1,0 +1,7 @@
+在功能上支持聚合、分组、排序、limit、top、=、between、in等查询操作，还对级联、笛卡尔积、内外连接查询有良好的支持。
+
+分片策略：
+	1、StandardShardingStrategy：标准分片策略，只支持单分片键，提供对sql的=、in、between、and的分片操作支持
+	2、ComplexShardingStrategy：复合分片策略，支持多分片键，同样提供对sql的=、in、between、and的分片操作支持
+	3、InlineShardingStrategy：inline表达式分片策略，使用groovy的inline表达式，提供对sql语句中的=和in的分片操作支持。
+	例如：t_user_${userID%8}表示t_user表根据userID按8取模分成8个表，表名依次为t_user_0、t_user_1到t_user_7.

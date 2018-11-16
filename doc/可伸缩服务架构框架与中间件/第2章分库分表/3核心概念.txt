@@ -1,0 +1,31 @@
+https://www.jianshu.com/p/74c02a2a89de
+
+LogicTable：
+	水平拆分的数据表，合并成一张表并统一对外的总称，也叫做逻辑表，例如：订单表被拆分成10张表，分别是t_order_0到t_order_9，那么他们的逻辑表名就是t_order，
+	也就是我们在应用中的mapper配置文件里写的表名
+	
+ActualTable：
+	在水平拆分后的数据库中真实存在的表，即在如上所述的实例中的t_order_0到t_order_9。
+	
+DataNode：
+	数据拆分的最小单元，由数据源的名称和数据表的名称组成，都是实际存在的库(表)，不是逻辑库(表)，例如ds_1.t_order_0（默认在拆分后，各个数据库的表结构都相同）。
+	
+BindingTable：
+	按照一个分片键进行拆分的两张数据库表，也叫做绑定表。例如，订单表和订单明细表均按照order_id进行拆分，按照order_id进行路由规则，则这两张表互为BindingTable，
+	值得注意的是，在BindingTable关系表之间的关联查询并不会出现笛卡尔积的情况，所以BindingTable关系表的查询效率很高，建议统一使用这种方式键表。
+	
+ShardingColumn：
+	数据库表的分片字段，例如，订单表按照order_id字段进行取模分片，这个order_id就是ShardingColumn。指的注意的是，在程序中执行sql时，如果在该sql中无分片字段，
+	那么执行效率很低，尤其是在查询时，所以不建议使用。
+	
+ShardingAlgorithm：
+	分片路由算法，在将数据拆分后，Sharding jdbc通过分片算法对sql操作进行路由，具体的分片路由将在分片策略中实现，通常使用hash取模实现，Sharding jdbc支持
+	使用=、between、in进行查询操作。
+	
+一些限制：
+	1、不支持having
+	2、不支持union、union all
+	3、不支持or
+	4、不支持批量insert
+	5、不支持distinct
+	6、不支持多子查询嵌套

@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS `db_machine_id_provider` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ip` varchar(50) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='分布式发号器';

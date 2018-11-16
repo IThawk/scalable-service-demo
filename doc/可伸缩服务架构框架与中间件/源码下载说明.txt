@@ -1,0 +1,24 @@
+《可伸缩服务架构：框架与中间件》的所有源代码都包含在F4框架中，enjoy IT……
+1. 分布式发号器Vesta
+
+- 主页：https://gitee.com/robertleepeak/vesta-id-generator
+- 介绍：Vesta是一款通用的ID产生器，互联网俗称统一发号器，它具有全局唯一、粗略有序、可反解和可制造等特性，它支持三种发布模式：嵌入发布模式、中心服务器发布模式、REST发 布模式，根据业务的性能需求，它可以产生最大峰值型和最小粒度型两种类型的ID，它的实现架构使其具有高性能，高可用和可伸缩等互联网产品需要的质量属性，是一款通用的高性能的发号器产品
+
+
+2. 分库分表Dbsplit
+
+- 主页：https://gitee.com/robertleepeak/dbsplit
+- 介绍：Dbsplit扩展了Spring的JdbcTemplate, 在JdbcTemplate上增加了分库分表，读写分离和失效转移等功能，并与Spring JDBC保持相同的风格，简单实用，避免外部依赖，不需要类似cobar的代理服务器，堪称可伸缩的Spring JdbcTemplate
+
+3. 缓存分片Redic
+
+- 主页：https://gitee.com/robertleepeak/redic
+- 介绍：一个简单易用的Redis缓存客户端，与Spring无缝结合，简单导入Spring环境或者配置Redic Bean即可使用，并且支持读写分离和分片。
+
+4. 消息队列处理机模板KClient
+
+- 主页：https://gitee.com/robertleepeak/kclient
+- 介绍：KClient是一个简单易用，有效集成，高性能，高稳定的Kafka Java客户端。
+
+介绍页面：
+http://mp.weixin.qq.com/mp/homepage?__biz=MzAwNTQ4MTQ4NQ==&hid=10&sn=6ed0453c081cbcd8730ccaa1c7501ba4&scene=18#wechat_redirect

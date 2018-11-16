@@ -1,0 +1,21 @@
+分库分表最主要有几个配置：
+
+有多少个数据源
+每张表的逻辑表名和所有物理表名
+用什么列进行分库以及分库算法
+用什么列进行分表以及分表算法
+分为两个库：test_msg0 , test_msg1，
+每个库都包含两个表: t_order_0 , t_order_1
+使用user_id作为分库列；
+使用order_id作为分表列；
+
+CREATE TABLE `t_order_0` (
+  `id` int NOT NULL AUTO_INCREMENT COMMENT '主键id',
+  `orderId` int DEFAULT NULL COMMENT '顺序编号',
+  `userId` int DEFAULT NULL COMMENT '用户编号',
+  `userName` varchar(32) DEFAULT NULL COMMENT '用户名',
+  `passWord` varchar(32) DEFAULT NULL COMMENT '密码',
+  `userSex` varchar(32) DEFAULT NULL,
+  `nickName` varchar(32) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
