@@ -1,27 +1,3 @@
 spring:
-  datasource:
-    url: jdbc:mysql://127.0.0.87:port/test?allowMultiQueries=true
-    driverClassName: com.mysql.jdbc.Driver
-    type: com.zaxxer.hikari.HikariDataSource
-    username: 123
-    password: 123
-
-split:
-  datasource:
-    names: ds1,ds2
-    ds1:
-      url: jdbc:mysql://127.0.0.98:6006/test_msg0?allowMultiQueries=true
-      driverClassName: com.mysql.jdbc.Driver
-      type: com.zaxxer.hikari.HikariDataSource
-      username: dev_test
-      password: dev_test
-    ds2:
-      url: jdbc:mysql://127.0.0.98:6006/test_msg1?allowMultiQueries=true
-      driverClassName: com.mysql.jdbc.Driver
-      type: com.zaxxer.hikari.HikariDataSource
-      username: dev_test
-      password: dev_test
-
-mybatis:
-  mapper-locations: classpath*:sql/*.xml
-  type-aliases-package: com.scalable.domain
+  profiles:
+    active: loc
