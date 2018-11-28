@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.1.1:3306/test?allowMultiQueries=true
+    driverClassName: com.mysql.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    username: name
+    password: pass
+
+split:
+  datasource:
+    names: ds1,ds2
+    ds1:
+      url: jdbc:mysql://192.168.1.1:6006/test_msg0?allowMultiQueries=true
+      driverClassName: com.mysql.jdbc.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      username: name
+      password: pass
+    ds2:
+      url: jdbc:mysql://192.168.1.1:6006/test_msg1?allowMultiQueries=true
+      driverClassName: com.mysql.jdbc.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      username: name
+      password: pass
+
+mybatis:
+  mapper-locations: classpath*:sql/*.xml
+  type-aliases-package: com.scalable.domain
